@@ -32,12 +32,24 @@ print("Starting MolGAN API...")
 # -----------------------------
 # Load Model
 # -----------------------------
+import os
+import gdown
+
+MODEL_PATH = "molgan_gen.pth"
+
+# Download if not present
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model...")
+    url = "https://drive.google.com/uc?id=1Om09l6O2gG5rCnlHEvs15iOFKobd8eyU"
+    gdown.download(url, MODEL_PATH, quiet=False)
+
+print("Loading model...")
 
 generator = Generator().to(device)
 
 generator.load_state_dict(
     torch.load(
-        "molgan_gen.pth",
+        MODEL_PATH,
         map_location=device,
         weights_only=True,
     )
