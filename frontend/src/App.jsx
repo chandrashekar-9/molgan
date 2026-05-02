@@ -7,7 +7,7 @@ import ArchitectureSlide from './components/ArchitectureSlide';
 import PropertyGuide from './components/PropertyGuide';
 import LandingPage from './components/LandingPage';
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = 'https://molgan.onrender.com';
 
 // ── CSV export helper ────────────────────────────────────────────────────────
 function downloadCSV(molecules) {
